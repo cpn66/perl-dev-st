@@ -1,0 +1,8 @@
+#!/bin/bash
+#что бы не менять номер весии 
+sudo rm -rf ST/Common/.git
+#чистим если был запущен
+docker rm $(docker ps -aq --filter name=perl-dev-st)
+#подключение исходников для сборки пакета
+docker run  --name perl-dev-st -v $PWD/ST:/home/dev/ST -it  cpn66/perl-dev-st bash
+#docker run  --name perl-dev-st  -it  cpn66/perl-dev-st bash

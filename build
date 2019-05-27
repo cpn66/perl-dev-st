@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build -t cpn66/perl-dev-st .
